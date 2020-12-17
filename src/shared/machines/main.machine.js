@@ -7,7 +7,7 @@ const { raise } = actions;
 const fakeFetch = new Promise((r) => setTimeout(r, 2000));
 
 export default {
-    initial: "auth",
+    initial: "boot",
 
     on : {
         VIEW_AUTH : ".auth",
@@ -17,7 +17,9 @@ export default {
         boot : {
             invoke : {
                 src     : fakeFetch,
-                actions : raise("VIEW_AUTH"),
+                onDone : {
+                    actions : raise("VIEW_AUTH"),
+                }
             }
         },
 
