@@ -1,12 +1,12 @@
-<script>
-import { Components } from "xcr-svelte";
+<style lang="scss">
+    @import 'auth';
+</style>
 
+<h1>Auth</h1>
+{#each components as { component, props, children } (component.default)}
+    <svelte:component this={component.default} components={children} {...props} />
+{/each}
+
+<script>	
 export let components;
-
-$: console.log(components);
 </script>
-
-<div class="card">
-    <h1>Auth</h1>
-    <Components {components} />
-</div>

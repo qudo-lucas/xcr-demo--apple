@@ -1,0 +1,16 @@
+{
+    "extends": ["stylelint-config-sass-guidelines", "stylelint-config-idiomatic-order"],
+    "plugins": [
+        "stylelint-declaration-use-variable",
+        "stylelint-scss"
+    ],
+    "rules": {
+        "sh-waqar/declaration-use-variable": [["/color/", "z-index", "font-size"]],
+        "shorthand-property-no-redundant-values" : true,
+        "color-no-hex": true,
+        "color-named": "never",
+        "order/properties-alphabetical-order": null,
+        "indentation": 4,
+        "max-empty-lines": 1
+    }
+}

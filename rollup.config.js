@@ -1,7 +1,6 @@
 import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
 import svelte from "rollup-plugin-svelte";
-import babel from "rollup-plugin-babel";
 import livereload from "rollup-plugin-livereload";
 import json from "@rollup/plugin-json";
 import sass from "rollup-plugin-sass";
@@ -61,10 +60,6 @@ export default {
             browser : true,
             dedupe  : [ "svelte" ],
         }),
-        // babel({
-        //     exclude        : "node_modules/**",
-        //     runtimeHelpers : true,
-        // }),
         commonjs(),
         copy({
             targets : [

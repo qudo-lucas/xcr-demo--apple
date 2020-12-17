@@ -4,38 +4,43 @@ import { component } from "xcr";
 
 const { raise } = actions;
 
-import SignIn from "views/auth/pages/signin.svelte";
+const fakeFetch = new Promise((r) => setTimeout(r, 2000));
 
 export default {
-    initial : "auth",
+    initial: "auth",
 
     on : {
-        AUTH : "auth",
-        HOME : "home"
+        VIEW_AUTH : ".auth",
     },
-    
+
     states : {
+        boot : {
+            invoke : {
+                src     : fakeFetch,
+                actions : raise("VIEW_AUTH"),
+            }
+        },
+
         auth : component(import("views/auth/auth.svelte"), {
-			initial : "signin",
-					
+            initial : "idle",
+
+            on : {
+                AUTH_RESET    : ".idle",
+                AUTH_SUBMIT : ".loading",
+                AUTH_SUCCESS : ".success",
+            },
+
             states : {
-                signin : component(SignIn, {
-                    on : {
-                        NEXT : "info"
-                    }
+                idle : component(import("views/auth/views/form/form.svelte"), {
+                    
                 }),
-            
-                info : component(import("views/auth/pages/general-info.svelte"), {
-                    on : {
-                        BACK : "signin",
-                        NEXT : {
-                            actions : raise("HOME"),
-                        }
-                    }
+                loading : component(import("views/auth/views/loading/loading.svelte"), {
+                    
+                }),
+                success : component(import("views/auth/views/success/success.svelte"), {
+
                 }),
             },
         }),
-			
-        home : component(import("views/home/home.svelte")),
     },
 };

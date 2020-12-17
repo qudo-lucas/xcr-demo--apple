@@ -1,0 +1,16 @@
+{
+    "editor.tabSize": 4,
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      "html",
+      "svelte"
+    ],
+    "editor.codeActionsOnSave": {
+        // SORRY NOT SORRY: Opinionated settings causing stylelint and eslint to autofix on save.
+        // NOTE: It is possible prettier might cause conflicts. This is just my favorite way of handling this.
+        "source.fixAll.stylelint": true,
+        "source.fixAll.eslint": true,
+    },
+}
+  
