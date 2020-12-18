@@ -7,7 +7,6 @@ import sass from "rollup-plugin-sass";
 import copy from "rollup-plugin-copy";
 import injectProcessEnv from "rollup-plugin-inject-process-env";
 import alias from "@rollup/plugin-alias";
-import { scss as preSCSS } from "svelte-preprocess";
 import replace from "@rollup/plugin-replace";
 
 const INPUT_DIR = "src";
@@ -15,6 +14,7 @@ const OUTPUT_DIR = "build";
 
 const production = !process.env.ROLLUP_WATCH;
 
+// Custom Rollup plugin to start the server
 const serve = () => {
     let started = false;
 
