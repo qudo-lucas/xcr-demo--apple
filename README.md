@@ -12,3 +12,8 @@ Custom autofix settings located in `./vscode/settings.json`. While this is a goo
     "source.fixAll.eslint": true,
 },
 ```
+
+## Development
+`npm install`
+`npm run dev`
+`npm run build`
