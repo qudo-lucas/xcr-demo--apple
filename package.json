@@ -43,15 +43,17 @@
     "stylelint-config-idiomatic-order": "^8.1.0",
     "stylelint-config-sass-guidelines": "^7.1.0",
     "stylelint-declaration-use-variable": "^1.7.2",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0",
     "stylelint-scss": "^3.18.0",
     "svelte": "^3.24.0",
-    "svelte-preprocess": "^3.9.9",
-    "svelte-preprocess-sass": "^0.2.0"
+    "svelte-preprocess": "^3.9.9"
   },
   "dependencies": {
     "@babel/plugin-transform-regenerator": "^7.8.7",
     "@babel/polyfill": "^7.8.7",
     "@babel/runtime": "^7.10.5",
+    "install": "^0.13.0",
     "xcr": "0.0.3",
     "xcr-svelte": "0.0.4",
     "xstate": "^4.11.0"

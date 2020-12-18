@@ -48,12 +48,8 @@ export default {
             // a separate file — better for performance
             dev        : !production,
 
-            preprocess : [
-                preSCSS({  }),
-            ],
-
             css : (css) => {
-                css.write(`${OUTPUT_DIR}/bundle.css`);
+                css.write("bundle.css");
             },
         }),
         resolve({
