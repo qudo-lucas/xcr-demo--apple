@@ -1,5 +1,5 @@
 <div class="signup">
-    <h3>Signup</h3>
+    <h1>Signup</h1>
     {#if errorMessage}
         <p>{errorMessage}</p>
     {/if}
